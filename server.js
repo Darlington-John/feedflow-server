@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://feedflow.vercel.app",
+    origin: "https://feedflow-gamma.vercel.app",
     methods: ["GET", "POST"],
   },
 });
