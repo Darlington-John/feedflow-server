@@ -6,6 +6,9 @@ const registerSocketHandlers = require("./socket");
 
 const app = express();
 const server = http.createServer(app);
+app.get("/ping", (req, res) => {
+  res.status(200).send("pong");
+});
 
 const io = new Server(server, {
   cors: {
@@ -13,6 +16,7 @@ const io = new Server(server, {
     methods: ["GET", "POST"],
   },
 });
+
 
 io.on("connection", (socket) => {
   console.log("✅ Client connected:", socket.id);
